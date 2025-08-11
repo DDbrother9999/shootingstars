@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "shootingstars",
+  "version": "${version}",
+  "name": "Shooting Stars",
+  "description": "",
+  "authors": [
+    "DDbrother"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.ddbrother.shootingstars.ShootingStars"
+    ],
+    "client": [
+      "com.ddbrother.shootingstars.client.ShootingStarsClient"
+    ],
+    "fabric-datagen": [
+      "com.ddbrother.shootingstars.client.ShootingStarsDataGenerator"
+    ]
+  },
+  "mixins": [
+    "shootingstars.mixins.json",
+    {
+      "config": "shootingstars.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.11",
+    "minecraft": "~1.21",
+    "java": ">=21",
+    "fabric-api": "*",
+    "fabric-language-kotlin": ">=1.11.0+kotlin.2.0.0"
+  }
+}
