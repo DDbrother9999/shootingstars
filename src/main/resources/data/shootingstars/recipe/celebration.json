@@ -1,20 +1,22 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "pattern": [
     "AAA",
     "ABA",
     "AAA"
   ],
   "key": {
-    "B": {
-      "item": "minecraft:crossbow"
-    },
-    "A": {
-      "item": "minecraft:fire_charge"
-    }
+    "A": [
+      "minecraft:fire_charge"
+    ],
+    "B": [
+      "minecraft:crossbow"
+    ]
   },
   "result": {
-    "item": "shootingstars:celebration",
+    "id": "shootingstars:celebration",
     "count": 1
-  }
+  },
+  "show_notification": false
 }
