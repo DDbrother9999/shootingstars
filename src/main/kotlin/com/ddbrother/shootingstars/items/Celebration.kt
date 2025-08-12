@@ -57,8 +57,7 @@ class Celebration(settings: Settings) : Item(settings) {
             player
         )
 
-        rocket.setVelocity(forward.x, 0.0, forward.z, 0.5f, 0.5f)
-        rocket.pitch = 0f
+        rocket.setVelocity(player.rotationVector.x, player.rotationVector.y, player.rotationVector.z, 0.25f, 0.3f)
 
         world.spawnEntity(rocket)
     }
