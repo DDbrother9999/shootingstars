@@ -7,8 +7,7 @@ import net.minecraft.registry.RegistryKey
 import net.minecraft.registry.RegistryKeys
 import net.minecraft.util.Identifier
 
-
-object Items {
+object CustomItems {
 
     val CELEBRATION: Item = register("celebration", ::Celebration, Item.Settings().maxCount(1))
 

@@ -103,7 +103,7 @@ class HomingFireworkEntity(
         try {
             val field = FireworkRocketEntity::class.java.getDeclaredField("lifeTime")
             field.isAccessible = true
-            field.setInt(this,   (Random.nextInt(from = 3, until = 4) * 7).toInt())
+            field.setInt(this, (Random.nextInt(from = 3, until = 4) * 7))
         } catch (_: Exception) {}
     }
 
@@ -124,13 +124,12 @@ class HomingFireworkEntity(
                 (Random.nextDouble() - 0.5) * 0.3,
                 (Random.nextDouble() - 0.5) * 0.3
             )
-            this.setVelocity(vel.add(offset))
+            this.velocity = vel.add(offset)
         } else if (ticksAlive < 20) {
             val target = world.getEntitiesByClass(
                 LivingEntity::class.java,
-                boundingBox.expand(10.0),
-                { it.isAlive && it != owner && !it.isSpectator }
-            ).minByOrNull { it.squaredDistanceTo(this) }
+                boundingBox.expand(10.0)
+            ) { it.isAlive && it != owner && !it.isSpectator }.minByOrNull { it.squaredDistanceTo(this) }
 
             if (target != null) {
                 val vel = velocity
@@ -140,7 +139,7 @@ class HomingFireworkEntity(
                     .multiply(vel.length())
 
                 val newVel = vel.add(toTarget.subtract(vel).multiply(0.25))
-                this.setVelocity(newVel)
+                this.velocity = newVel
             }
         }
     }
@@ -148,9 +147,8 @@ class HomingFireworkEntity(
     private fun applyCelebrationMark() {
         val nearbyEntities = world.getEntitiesByClass(
             LivingEntity::class.java,
-            this.boundingBox.expand(7.0),
-            { it.isAlive }
-        )
+            this.boundingBox.expand(7.0)
+        ) { it.isAlive }
 
         for (entity in nearbyEntities) {
             CelebrationManager.markEntity(entity.uuid, 100)

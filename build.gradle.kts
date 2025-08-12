@@ -74,13 +74,16 @@ tasks.processResources {
 
     filesMatching("fabric.mod.json") {
         expand(
-            "version" to project.version,
-            "minecraft_version" to project.property("minecraft_version"),
-            "loader_version" to project.property("loader_version"),
-            "kotlin_loader_version" to project.property("kotlin_loader_version")
+            mapOf(
+                "version" to project.version as Any,
+                "minecraft_version" to project.property("minecraft_version") as Any,
+                "loader_version" to project.property("loader_version") as Any,
+                "kotlin_loader_version" to project.property("kotlin_loader_version") as Any
+            )
         )
     }
 }
+
 
 tasks.withType<JavaCompile>().configureEach {
     // ensure that the encoding is set to UTF-8, no matter what the system default is

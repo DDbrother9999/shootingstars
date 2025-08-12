@@ -8,4 +8,6 @@ class ShootingStarsDataGenerator : DataGeneratorEntrypoint {
     override fun onInitializeDataGenerator(fabricDataGenerator: FabricDataGenerator) {
         val pack = fabricDataGenerator.createPack()
     }
+
+
 }
