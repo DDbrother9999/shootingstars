@@ -11,7 +11,6 @@ import net.minecraft.entity.projectile.FireworkRocketEntity
 import net.minecraft.item.Item
 import net.minecraft.item.ItemStack
 import net.minecraft.item.Items
-
 import net.minecraft.sound.SoundCategory
 import net.minecraft.sound.SoundEvents
 import net.minecraft.util.ActionResult
@@ -21,7 +20,6 @@ import net.minecraft.world.World
 import kotlin.random.Random
 
 class Celebration(settings: Settings) : Item(settings) {
-
 
     override fun use(world: World, user: PlayerEntity, hand: Hand): ActionResult {
         if (!world.isClient) {
@@ -46,7 +44,7 @@ class Celebration(settings: Settings) : Item(settings) {
 
     private fun spawnRocket(world: World, player: PlayerEntity) {
         val forward = Vec3d(player.rotationVector.x, 0.0, player.rotationVector.z).normalize()
-        val spawnPos = player.pos.add(forward.multiply(1.0)).add(0.0, 1.0, 0.0) // chest height
+        val spawnPos = player.pos.add(forward.multiply(1.0)).add(0.0, 1.0, 0.0)
 
         val fireworkStack = createRandomFirework()
 
@@ -127,8 +125,7 @@ class HomingFireworkEntity(
                 (Random.nextDouble() - 0.5) * 0.3
             )
             this.setVelocity(vel.add(offset))
-        }
-        else if (ticksAlive < 20) {
+        } else if (ticksAlive < 20) {
             val target = world.getEntitiesByClass(
                 LivingEntity::class.java,
                 boundingBox.expand(10.0),

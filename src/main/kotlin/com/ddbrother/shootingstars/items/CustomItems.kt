@@ -1,6 +1,5 @@
 package com.ddbrother.shootingstars.items
 
-import com.ddbrother.shootingstars.ShootingStars
 import net.minecraft.item.Item
 import net.minecraft.registry.Registries
 import net.minecraft.registry.Registry
