@@ -24,7 +24,6 @@ public abstract class FallingBlockEntityMixin {
     @Shadow
     private BlockState blockState;
 
-
     @Inject(method = "tick", at = @At("HEAD"))
     private void onAnvilLandTick(CallbackInfo ci) {
         FallingBlockEntity thisEntity = (FallingBlockEntity) (Object) this;
