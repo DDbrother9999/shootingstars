@@ -23,6 +23,7 @@ class Celebration(settings: Settings) : Item(settings) {
 
     override fun use(world: World, user: PlayerEntity, hand: Hand): ActionResult {
         if (!world.isClient) {
+
             world.playSound(
                 null,
                 user.x,
@@ -38,7 +39,6 @@ class Celebration(settings: Settings) : Item(settings) {
                 spawnRocket(world, user)
             }
         }
-
         return ActionResult.SUCCESS
     }
 

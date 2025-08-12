@@ -3,7 +3,8 @@
   "package": "com.ddbrother.shootingstars.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "LivingEntityMixin"
+    "LivingEntityMixin",
+    "FallingBlockEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1
