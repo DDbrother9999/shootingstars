@@ -1,0 +1,43 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "ABC",
+    "DEF",
+    "GHI"
+  ],
+  "key": {
+    "A": [
+      "minecraft:magma_block"
+    ],
+    "B": [
+      "minecraft:honey_block"
+    ],
+    "C": [
+      "minecraft:enchanted_golden_apple"
+    ],
+    "D": [
+      "minecraft:emerald_block"
+    ],
+    "E": [
+      "minecraft:nether_star"
+    ],
+    "F": [
+      "minecraft:sculk"
+    ],
+    "G": [
+      "minecraft:dragon_breath"
+    ],
+    "H": [
+      "minecraft:dragon_head"
+    ],
+    "I": [
+      "minecraft:ghast_tear"
+    ]
+  },
+  "result": {
+    "id": "shootingstars:star",
+    "count": 1
+  },
+  "show_notification": false
+}

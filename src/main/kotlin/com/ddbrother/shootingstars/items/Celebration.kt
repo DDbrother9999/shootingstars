@@ -35,6 +35,8 @@ class Celebration(settings: Settings) : Item(settings) {
                 1.0f
             )
 
+            //for screenie
+            //for (i in 0..20) {
             for (i in 0..4) {
                 spawnRocket(world, user)
             }
@@ -57,6 +59,8 @@ class Celebration(settings: Settings) : Item(settings) {
             player
         )
 
+        //for screenie
+        //rocket.setVelocity(player.rotationVector.x, player.rotationVector.y, player.rotationVector.z, 0.25f, 0.5f)
         rocket.setVelocity(player.rotationVector.x, player.rotationVector.y, player.rotationVector.z, 0.25f, 0.3f)
 
         world.spawnEntity(rocket)
@@ -72,7 +76,9 @@ class Celebration(settings: Settings) : Item(settings) {
             FireworkExplosionComponent.Type.entries.random(),
             IntArrayList(List(Random.nextInt(1, 4)) { Random.nextInt(0xFFFFFF + 1) }),
             IntArrayList(listOf(Random.nextInt(0xFFFFFF + 1))),
-            Random.nextBoolean(),
+            //for screenie
+            false,
+            //Random.nextBoolean(),
             Random.nextBoolean()
         )
 
@@ -102,6 +108,10 @@ class HomingFireworkEntity(
         try {
             val field = FireworkRocketEntity::class.java.getDeclaredField("lifeTime")
             field.isAccessible = true
+
+            //for screenie!
+            //field.setInt(this, (Random.nextInt(from = 3, until = 4) * 5))
+
             field.setInt(this, (Random.nextInt(from = 3, until = 4) * 7))
         } catch (_: Exception) {}
     }
@@ -153,7 +163,6 @@ class HomingFireworkEntity(
             CelebrationManager.markEntity(entity.uuid, 100)
         }
     }
-
 }
 
 

@@ -2,16 +2,19 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "pattern": [
-    "AAA",
-    "ABA",
-    "AAA"
+    "BCB",
+    "BAB",
+    "BCB"
   ],
   "key": {
     "A": [
-      "minecraft:fire_charge"
+      "minecraft:crossbow"
     ],
     "B": [
-      "minecraft:crossbow"
+      "shootingstars:star_shard"
+    ],
+    "C": [
+      "minecraft:fire_charge"
     ]
   },
   "result": {
